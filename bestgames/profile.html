@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Личный кабинет — BestGames</title>
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/profile.css" />
+  </head>
+
+  <body class="page">
+    <!-- ===== Header ===== -->
+    <header class="header">
+      <div class="container header__row">
+        <a
+          class="logo header__logo"
+          href="index.html"
+          aria-label="BestGames — на главную"
+        >
+          <span class="logo__mark">BG</span>
+          <span class="logo__text">BestGames</span>
+        </a>
+
+        <nav class="nav header__nav" aria-label="Навигация">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="index.html">Главная</a></li>
+            <li><a class="nav__link" href="catalog.html">Каталог игр</a></li>
+
+            <!-- Переключение темы между файлами -->
+            <li>
+              <a
+                class="theme-toggle"
+                href="index_light.html"
+                aria-label="Перейти на светлую тему"
+              >
+                🌞
+              </a>
+            </li>
+
+            <li><a class="btn btn--secondary" href="login.html">Выйти</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===== Main ===== -->
+    <main class="profile">
+      <div class="container profile__grid">
+        <!-- ===== User Info ===== -->
+        <section
+          class="panel profile__panel"
+          aria-label="Информация о пользователе"
+        >
+          <h1 class="panel__title">Личный кабинет</h1>
+          <p class="panel__subtitle">Данные пользователя</p>
+
+          <!-- Контент заменишь на данные из медиа -->
+          <dl class="info">
+            <div class="info__row">
+              <dt class="info__key">E-mail</dt>
+              <dd class="info__value">user@bestgames.ru</dd>
+            </div>
+
+            <div class="info__row">
+              <dt class="info__key">Фамилия</dt>
+              <dd class="info__value">Иванов</dd>
+            </div>
+
+            <div class="info__row">
+              <dt class="info__key">Имя</dt>
+              <dd class="info__value">Иван</dd>
+            </div>
+
+            <div class="info__row">
+              <dt class="info__key">Дата рождения</dt>
+              <dd class="info__value">15.04.2002</dd>
+            </div>
+
+            <div class="info__row">
+              <dt class="info__key">Номер телефона</dt>
+              <dd class="info__value">+7 (999) 123-45-67</dd>
+            </div>
+          </dl>
+        </section>
+
+        <!-- ===== Purchases ===== -->
+        <section class="panel profile__panel" aria-label="История покупок">
+          <h2 class="panel__title panel__title--h2">История покупок</h2>
+
+          <div
+            class="table-wrap"
+            role="region"
+            aria-label="Таблица покупок"
+            tabindex="0"
+          >
+            <table class="table">
+              <thead class="table__head">
+                <tr class="table__row">
+                  <th class="table__th" scope="col">Дата покупки</th>
+                  <th class="table__th" scope="col">Игра / предмет</th>
+                  <th class="table__th table__th--right" scope="col">
+                    Стоимость
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="table__body">
+                <!-- Примеры (замени на контент из медиа) -->
+                <tr class="table__row">
+                  <td class="table__td">10.02.2026</td>
+                  <td class="table__td">Cyber Quest (Game)</td>
+                  <td class="table__td table__td--right">1 999 ₽</td>
+                </tr>
+
+                <tr class="table__row">
+                  <td class="table__td">25.01.2026</td>
+                  <td class="table__td">Neon Drift — Season Pass</td>
+                  <td class="table__td table__td--right">499 ₽</td>
+                </tr>
+
+                <tr class="table__row">
+                  <td class="table__td">11.12.2025</td>
+                  <td class="table__td">Iron Kingdom (Game)</td>
+                  <td class="table__td table__td--right">2 499 ₽</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ===== Settings ===== -->
+        <section class="panel profile__panel" aria-label="Настройки профиля">
+          <h2 class="panel__title panel__title--h2">Настройки профиля</h2>
+          <p class="panel__subtitle">Управление аккаунтом</p>
+
+          <div class="settings">
+            <!-- Кнопка смены пароля (может вести на заглушку) -->
+            <a class="btn btn--primary" href="#" aria-label="Сменить пароль">
+              Сменить пароль
+            </a>
+
+            <!-- Выбор темы (между файлами) -->
+            <div class="theme-switch">
+              <span class="theme-switch__label">Тема:</span>
+              <div class="theme-switch__actions">
+                <a
+                  class="btn btn--secondary"
+                  href="index.html"
+                  aria-label="Темная тема"
+                  >Тёмная</a
+                >
+                <a
+                  class="btn btn--outline"
+                  href="index_light.html"
+                  aria-label="Светлая тема"
+                  >Светлая</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <a class="footer__brand" href="index.html">BestGames</a>
+          <p class="footer__text">
+            Тел:
+            <a class="footer__link" href="tel:88009995599">8-800-999-55-99</a
+            ><br />
+            E-mail:
+            <a class="footer__link" href="mailto:best@games.ru"
+              >best@games.ru</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

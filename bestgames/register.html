@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Регистрация — BestGames</title>
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/register.css" />
+  </head>
+
+  <body class="page">
+    <!-- ===== Header ===== -->
+    <header class="header">
+      <div class="container header__row">
+        <a
+          class="logo header__logo"
+          href="index.html"
+          aria-label="BestGames — на главную"
+        >
+          <span class="logo__mark">BG</span>
+          <span class="logo__text">BestGames</span>
+        </a>
+
+        <nav class="nav header__nav" aria-label="Навигация">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="index.html">Главная</a></li>
+            <li><a class="nav__link" href="catalog.html">Каталог игр</a></li>
+            <li><a class="nav__link" href="login.html">Войти</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===== Main ===== -->
+    <main class="auth">
+      <div class="container auth__container">
+        <section
+          class="auth-card auth-card--wide"
+          aria-label="Форма регистрации"
+        >
+          <h1 class="auth-card__title">Регистрация</h1>
+          <p class="auth-card__subtitle">
+            Заполните все поля, чтобы создать аккаунт.
+          </p>
+
+          <form class="auth-form" action="#" method="post">
+            <div class="form-grid">
+              <!-- E-mail -->
+              <label class="field">
+                <span class="field__label">E-mail</span>
+                <input
+                  class="field__input"
+                  type="email"
+                  name="email"
+                  placeholder="example@mail.ru"
+                  required
+                />
+              </label>
+
+              <!-- Телефон -->
+              <label class="field">
+                <span class="field__label">Номер телефона</span>
+                <input
+                  class="field__input"
+                  type="tel"
+                  name="phone"
+                  placeholder="+7 (999) 123-45-67"
+                  required
+                />
+              </label>
+
+              <!-- Фамилия -->
+              <label class="field">
+                <span class="field__label">Фамилия</span>
+                <input
+                  class="field__input"
+                  type="text"
+                  name="last_name"
+                  placeholder="Иванов"
+                  required
+                />
+              </label>
+
+              <!-- Имя -->
+              <label class="field">
+                <span class="field__label">Имя</span>
+                <input
+                  class="field__input"
+                  type="text"
+                  name="first_name"
+                  placeholder="Иван"
+                  required
+                />
+              </label>
+
+              <!-- Дата рождения -->
+              <label class="field">
+                <span class="field__label">Дата рождения</span>
+                <input
+                  class="field__input"
+                  type="date"
+                  name="birth_date"
+                  required
+                />
+              </label>
+
+              <!-- Пустое место под сетку (чтобы на десктопе было ровно) -->
+              <div class="form-grid__spacer" aria-hidden="true"></div>
+
+              <!-- Пароль -->
+              <label class="field">
+                <span class="field__label">Пароль</span>
+                <input
+                  class="field__input"
+                  type="password"
+                  name="password"
+                  placeholder="Введите пароль"
+                  minlength="6"
+                  required
+                />
+              </label>
+
+              <!-- Повтор пароля -->
+              <label class="field">
+                <span class="field__label">Повтор пароля</span>
+                <input
+                  class="field__input"
+                  type="password"
+                  name="password_repeat"
+                  placeholder="Повторите пароль"
+                  minlength="6"
+                  required
+                />
+              </label>
+            </div>
+
+            <!-- Согласие -->
+            <label class="check">
+              <input
+                class="check__input"
+                type="checkbox"
+                name="agreement"
+                required
+              />
+              <span class="check__box" aria-hidden="true"></span>
+              <span class="check__text">
+                Я согласен(на) на обработку персональных данных
+              </span>
+            </label>
+
+            <!-- Кнопка регистрации -->
+            <button class="btn btn--primary auth-form__submit" type="submit">
+              Зарегистрироваться
+            </button>
+
+            <p class="auth-form__hint">
+              Уже есть аккаунт?
+              <a class="auth-form__link" href="login.html">Войти</a>
+            </p>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <a class="footer__brand" href="index.html">BestGames</a>
+          <p class="footer__text">
+            Тел:
+            <a class="footer__link" href="tel:88009995599">8-800-999-55-99</a
+            ><br />
+            E-mail:
+            <a class="footer__link" href="mailto:best@games.ru"
+              >best@games.ru</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

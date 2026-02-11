@@ -1,0 +1,55 @@
+/* ==========================================================================
+   pages/login.css — страница входа
+   ========================================================================== */
+
+.auth {
+  min-height: calc(100vh - 160px);
+  display: grid;
+  align-items: center;
+}
+
+.auth__container {
+  display: flex;
+  justify-content: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.auth-card__title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-form {
+  display: grid;
+  gap: 16px;
+}
+
+.auth-form__submit {
+  margin-top: 6px;
+  width: 100%;
+}
+
+.auth-form__link {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--accent-2);
+  transition: color 0.2s ease;
+}
+
+.auth-form__link:hover {
+  color: var(--accent);
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Вход — BestGames</title>
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/login.css" />
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <div class="container header__row">
+        <a class="logo header__logo" href="index.html">
+          <span class="logo__mark">BG</span>
+          <span class="logo__text">BestGames</span>
+        </a>
+
+        <nav class="nav header__nav">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="index.html">Главная</a></li>
+            <li><a class="nav__link" href="catalog.html">Каталог игр</a></li>
+            <li><a class="nav__link" href="register.html">Регистрация</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ===== Main ===== -->
+    <main class="auth">
+      <div class="container auth__container">
+        <section class="auth-card" aria-label="Форма входа">
+          <h1 class="auth-card__title">Вход в личный кабинет</h1>
+
+          <form class="auth-form" action="#" method="post">
+            <!-- E-mail -->
+            <label class="field">
+              <span class="field__label">E-mail</span>
+              <input
+                class="field__input"
+                type="email"
+                name="email"
+                placeholder="example@mail.ru"
+                required
+              />
+            </label>
+
+            <!-- Пароль -->
+            <label class="field">
+              <span class="field__label">Пароль</span>
+              <input
+                class="field__input"
+                type="password"
+                name="password"
+                placeholder="Введите пароль"
+                required
+              />
+            </label>
+
+            <!-- Кнопка входа -->
+            <button class="btn btn--primary auth-form__submit" type="submit">
+              Войти
+            </button>
+
+            <!-- Восстановление пароля -->
+            <a
+              class="auth-form__link"
+              href="#"
+              aria-label="Восстановить пароль"
+            >
+              Забыли пароль?
+            </a>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <!-- ===== Footer (упрощённый) ===== -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <a class="footer__brand" href="index.html">BestGames</a>
+          <p class="footer__text">
+            E-mail:
+            <a class="footer__link" href="mailto:best@games.ru"
+              >best@games.ru</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

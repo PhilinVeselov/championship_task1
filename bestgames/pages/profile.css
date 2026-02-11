@@ -1,0 +1,160 @@
+.profile {
+  padding: 40px 0;
+}
+
+.profile__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.6fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* Панели */
+.panel {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.panel__title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 26px;
+}
+
+.panel__title--h2 {
+  font-size: 20px;
+}
+
+.panel__subtitle {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Инфо о пользователе */
+.info {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.info__row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.info__key {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.info__value {
+  font-weight: 600;
+}
+
+/* Таблица */
+.table-wrap {
+  margin-top: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table__th,
+.table__td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.table__th {
+  text-align: left;
+  color: var(--muted);
+  background: var(--surface-2);
+  font-weight: 600;
+}
+
+.table__td--right,
+.table__th--right {
+  text-align: right;
+}
+
+.table__row:hover .table__td {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+:root[data-theme="light"] .table__row:hover .table__td {
+  background: rgba(16, 24, 40, 0.04);
+}
+
+/* Настройки */
+.settings {
+  margin-top: 14px;
+  display: grid;
+  gap: 14px;
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.theme-switch__label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.theme-switch__actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Адаптация (чтобы не ломалось на меньшей ширине) */
+@media (max-width: 1100px) {
+  .profile__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info__row {
+    grid-template-columns: 1fr;
+  }
+
+  .table__th--right,
+  .table__td--right {
+    text-align: left;
+  }
+
+  .theme-switch {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .theme-switch__actions {
+    justify-content: stretch;
+  }
+
+  .theme-switch__actions .btn {
+    width: 100%;
+  }
+}

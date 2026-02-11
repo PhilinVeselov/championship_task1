@@ -1,0 +1,199 @@
+.catalog {
+  padding: 40px 0;
+}
+
+/* Верхняя панель каталога */
+.catalog-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.catalog-head__title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 32px;
+}
+
+.catalog-head__subtitle {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* ===== Filters (desktop) ===== */
+.filters {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  position: sticky;
+  top: 78px;
+}
+
+.filters__title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.filters__group {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.filters__legend {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.filters__actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* chip checkbox */
+.chip {
+  display: inline-flex;
+  margin: 0 8px 10px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.chip__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip__box {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 14px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.chip__input:checked + .chip__box {
+  border-color: transparent;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+}
+
+.chip__input:focus-visible + .chip__box {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===== Grid of cards ===== */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Card */
+.catalog-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 170px 1fr;
+  transition: transform 0.18s ease, border-color 0.2s ease;
+}
+
+.catalog-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 92, 255, 0.45);
+}
+
+.catalog-card__img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.catalog-card__body {
+  padding: 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.catalog-card__title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.catalog-card__meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.catalog-card__row {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.catalog-card__price {
+  font-weight: 700;
+}
+
+.catalog-card__btn {
+  margin-top: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ===== Mobile/Tablet requirement: show "Filter" button and hide sidebar ===== */
+.catalog-head__filter-btn {
+  display: none; /* на десктопе скрыта */
+}
+
+@media (max-width: 1023px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* На mob/tablet фильтр не показываем слева, но есть кнопка "Фильтр" */
+  .filters {
+    position: static;
+    display: none; /* спрятан (имитация "открывается") */
+  }
+
+  .catalog-head__filter-btn {
+    display: inline-flex; /* появляется кнопка фильтра */
+  }
+
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+}

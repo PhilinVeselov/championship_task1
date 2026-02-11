@@ -1,0 +1,81 @@
+/* общий отступ секций */
+.hero,
+.quick-search,
+.benefits,
+.popular,
+.partners {
+  padding: 40px 0;
+}
+
+/* ===== Hero grid (slider + aside) ===== */
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.hero__aside {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: radial-gradient(
+      1200px 500px at 30% 0%,
+      rgba(124, 92, 255, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      1200px 500px at 80% 20%,
+      rgba(41, 211, 255, 0.18),
+      transparent 60%
+    ),
+    var(--surface);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.hero__aside-title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.hero__aside-text {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* ===== Quick search ===== */
+.quick-search__row {
+  display: grid;
+  gap: 14px;
+}
+
+.quick-search__form {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.quick-search__field {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ===== Popular ===== */
+.popular .section-head {
+  margin-bottom: 18px;
+}
+
+/* ===== Partners ===== */
+.partners .section-title {
+  margin-bottom: 6px;
+}

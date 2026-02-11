@@ -1,0 +1,415 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+.logo__text {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ===== Navigation (desktop visible) ===== */
+.header__nav {
+  display: block;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav__link {
+  padding: 10px 10px;
+  border-radius: 12px;
+  color: var(--muted);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav__link:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme="light"] .nav__link:hover {
+  background: rgba(16, 24, 40, 0.06);
+}
+
+/* ===== Burger (на десктопе скрыт) ===== */
+.header__burger {
+  display: none;
+}
+
+.burger {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-direction: column;
+}
+
+.burger__line {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text);
+  opacity: 0.9;
+}
+
+/* ===== Slider ===== */
+.slider {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.slider__track {
+  display: flex;
+  width: 100%;
+  transform: translateX(0%);
+  transition: transform 0.35s ease;
+}
+
+.slider__slide {
+  flex: 0 0 100%;
+  position: relative;
+  min-height: 360px;
+}
+
+.slide__img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  filter: saturate(1.05);
+}
+
+.slide__content {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  right: 18px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 15, 26, 0.2),
+    rgba(11, 15, 26, 0.85)
+  );
+}
+
+:root[data-theme="light"] .slide__content {
+  border: 1px solid rgba(16, 24, 40, 0.12);
+  background: linear-gradient(
+    180deg,
+    rgba(245, 247, 255, 0.55),
+    rgba(245, 247, 255, 0.92)
+  );
+}
+
+.slide__title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+.slide__price {
+  margin-top: 6px;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+/* dots */
+.slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 12px 14px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.slider__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  opacity: 0.9;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.slider__dot.is-active {
+  background: var(--accent);
+  transform: scale(1.15);
+  border-color: transparent;
+}
+
+/* ===== Benefits ===== */
+.benefits__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.benefit-card {
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.benefit-card__icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 10px;
+}
+
+.benefit-card__title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.benefit-card__text {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ===== Popular cards ===== */
+.game-card {
+  display: grid;
+  grid-template-rows: 160px 1fr;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, border-color 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 92, 255, 0.45);
+}
+
+.game-card__img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.game-card__body {
+  padding: 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.game-card__title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.game-card__meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.game-card__row {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.game-card__price {
+  font-weight: 700;
+}
+
+.game-card__btn {
+  margin-top: 8px;
+  width: fit-content;
+}
+
+/* ===== Rating ===== */
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.rating__star {
+  opacity: 0.25;
+}
+
+.rating__star--on {
+  opacity: 1;
+}
+
+/* ===== Partners ===== */
+.partners__grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.partners__logo {
+  height: 64px;
+  width: 100%;
+  object-fit: contain;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+/* ===== Footer parts ===== */
+.footer__brand {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.footer__text {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer__title {
+  font-family: "BG Display", "BG Sans", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer__list {
+  display: grid;
+  gap: 10px;
+}
+
+.footer__link {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: var(--text);
+}
+/* ===== Theme toggle ===== */
+/* ===== Theme toggle (file switch) ===== */
+.theme-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-2);
+}
+
+.theme-toggle:active {
+  transform: translateY(1px);
+}
+
+/* ===== Responsive nav logic ===== */
+/* Десктоп: меню видно, бургер скрыт */
+@media (min-width: 1024px) {
+  .header__burger {
+    display: none;
+  }
+
+  .header__nav {
+    display: block;
+    position: static;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+  }
+}
+
+/* Mobile/Tablet: бургер виден, меню скрыто и открывается по классу .is-open */
+@media (max-width: 1023px) {
+  .header__burger {
+    display: inline-flex;
+  }
+
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    left: 16px;
+    padding: 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .header__nav.is-open {
+    display: block;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav__link,
+  .nav__list .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Чтобы absolute меню позиционировалось относительно шапки */
+.header {
+  position: sticky;
+}
+.header__row {
+  position: relative;
+}

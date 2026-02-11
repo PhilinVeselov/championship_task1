@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BestGames — маркетплейс игр</title>
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/index.css" />
+  </head>
+
+  <body class="page">
+    <!-- ===== Header ===== -->
+    <header class="header">
+      <div class="container header__row">
+        <a
+          class="logo header__logo"
+          href="index.html"
+          aria-label="BestGames — на главную"
+        >
+          <!-- Вставь SVG логотипа сюда (или <img src="assets/icons/logo.svg" alt="BestGames">) -->
+          <span class="logo__mark">BG</span>
+          <span class="logo__text">BestGames</span>
+        </a>
+        <a
+          href="index_light.html"
+          class="theme-toggle"
+          aria-label="Переключить на светлую тему"
+        >
+          🌞
+        </a>
+
+        <!-- Бургер (виден на mobile/tablet) -->
+        <button
+          class="burger header__burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+        >
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+
+        <!-- Навигация (на desktop видна всегда, на mobile/tablet открывается бургером) -->
+        <nav class="nav header__nav" aria-label="Основное меню">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#search">Поиск</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="catalog.html">Каталог игр</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="profile.html">Личный кабинет</a>
+            </li>
+            <li class="nav__item">
+              <a class="btn btn--primary" href="login.html">Войти</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- ===== Slider / Новинки ===== -->
+      <section class="hero" aria-label="Новинки игр">
+        <div class="container hero__grid">
+          <div class="slider hero__slider" data-slider>
+            <div class="slider__track" data-slider-track>
+              <!-- СЛАЙД 1 -->
+              <article class="slide slider__slide" data-slide>
+                <img
+                  class="slide__img"
+                  src="assets/img/slider/game1.jpg"
+                  alt="Cyber Quest"
+                />
+                <div class="slide__content">
+                  <h2 class="slide__title">Cyber Quest</h2>
+                  <p class="slide__price">1 999 ₽</p>
+                  <a class="btn btn--outline" href="catalog.html">Подробнее</a>
+                </div>
+              </article>
+
+              <!-- СЛАЙД 2 -->
+              <article class="slide slider__slide" data-slide>
+                <img
+                  class="slide__img"
+                  src="assets/img/slider/game2.jpg"
+                  alt="Neon Drift"
+                />
+                <div class="slide__content">
+                  <h2 class="slide__title">Neon Drift</h2>
+                  <p class="slide__price">999 ₽</p>
+                  <a class="btn btn--outline" href="catalog.html">Подробнее</a>
+                </div>
+              </article>
+
+              <!-- СЛАЙД 3 -->
+              <article class="slide slider__slide" data-slide>
+                <img
+                  class="slide__img"
+                  src="assets/img/slider/game3.jpg"
+                  alt="Iron Kingdom"
+                />
+                <div class="slide__content">
+                  <h2 class="slide__title">Iron Kingdom</h2>
+                  <p class="slide__price">2 499 ₽</p>
+                  <a class="btn btn--outline" href="catalog.html">Подробнее</a>
+                </div>
+              </article>
+            </div>
+
+            <!-- Индикаторы активного слайда -->
+            <div
+              class="slider__dots"
+              role="tablist"
+              aria-label="Индикаторы слайдера"
+            >
+              <button
+                class="slider__dot is-active"
+                type="button"
+                aria-label="Слайд 1"
+                data-dot="0"
+              ></button>
+              <button
+                class="slider__dot"
+                type="button"
+                aria-label="Слайд 2"
+                data-dot="1"
+              ></button>
+              <button
+                class="slider__dot"
+                type="button"
+                aria-label="Слайд 3"
+                data-dot="2"
+              ></button>
+            </div>
+          </div>
+
+          <!-- Доп. блок справа (помогает как структурное изменение на tablet/desktop) -->
+          <aside class="hero__aside">
+            <h3 class="hero__aside-title">Топ-новинка месяца</h3>
+            <p class="hero__aside-text">Скидка до 30% на избранные релизы.</p>
+            <a class="btn btn--primary" href="catalog.html"
+              >Перейти в каталог</a
+            >
+          </aside>
+        </div>
+      </section>
+
+      <!-- ===== Quick Search ===== -->
+      <section
+        class="quick-search"
+        id="search"
+        aria-label="Быстрый поиск по жанрам"
+      >
+        <div class="container quick-search__row">
+          <h2 class="section-title quick-search__title">
+            Быстрый поиск по жанрам
+          </h2>
+
+          <form class="quick-search__form" action="catalog.html" method="get">
+            <label class="field quick-search__field">
+              <span class="field__label">Жанр</span>
+              <input
+                class="field__input"
+                type="text"
+                name="genre"
+                list="genres"
+                placeholder="Например: RPG"
+                required
+              />
+              <datalist id="genres">
+                <option value="RPG"></option>
+                <option value="Shooter"></option>
+                <option value="Strategy"></option>
+                <option value="Indie"></option>
+                <option value="Sports"></option>
+                <option value="Horror"></option>
+              </datalist>
+            </label>
+
+            <button class="btn btn--primary" type="submit">Найти</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ===== Benefits ===== -->
+      <section class="benefits" aria-label="Преимущества маркетплейса">
+        <div class="container">
+          <h2 class="section-title">Почему BestGames</h2>
+
+          <ul class="benefits__list">
+            <li class="benefit-card">
+              <img
+                class="benefit-card__icon"
+                src="assets/icons/price.svg"
+                alt=""
+              />
+              <h3 class="benefit-card__title">Привлекательные цены</h3>
+              <p class="benefit-card__text">
+                Лучшие предложения и честные скидки.
+              </p>
+            </li>
+
+            <li class="benefit-card">
+              <img
+                class="benefit-card__icon"
+                src="assets/icons/sale.svg"
+                alt=""
+              />
+              <h3 class="benefit-card__title">Ежемесячные акции</h3>
+              <p class="benefit-card__text">Регулярные распродажи и бонусы.</p>
+            </li>
+
+            <li class="benefit-card">
+              <img
+                class="benefit-card__icon"
+                src="assets/icons/support.svg"
+                alt=""
+              />
+              <h3 class="benefit-card__title">Круглосуточная поддержка</h3>
+              <p class="benefit-card__text">Помогаем 24/7 в чате и по почте.</p>
+            </li>
+
+            <li class="benefit-card">
+              <img
+                class="benefit-card__icon"
+                src="assets/icons/fast.svg"
+                alt=""
+              />
+              <h3 class="benefit-card__title">Быстрая покупка</h3>
+              <p class="benefit-card__text">
+                Покупка в пару кликов без лишнего.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===== Popular games ===== -->
+      <section class="popular" id="popular" aria-label="Популярные игры">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="section-title">Популярные игры</h2>
+            <a class="link" href="catalog.html">Открыть весь каталог →</a>
+          </div>
+
+          <div class="cards-grid">
+            <!-- Карточка 1 -->
+            <a
+              class="game-card"
+              href="catalog.html"
+              aria-label="Перейти в каталог игр"
+            >
+              <img
+                class="game-card__img"
+                src="assets/img/games/game1.jpg"
+                alt="Neon Drift"
+              />
+              <div class="game-card__body">
+                <h3 class="game-card__title">Neon Drift</h3>
+                <p class="game-card__meta">Жанр: Racing</p>
+                <p class="game-card__meta">Разработчик: Nova Studio</p>
+
+                <div class="game-card__row">
+                  <div class="rating" aria-label="Рейтинг 4 из 5">
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star">★</span>
+                  </div>
+                  <span class="game-card__price">999 ₽</span>
+                </div>
+
+                <span class="btn btn--secondary game-card__btn">В каталог</span>
+              </div>
+            </a>
+
+            <!-- Карточки 2–5: копируй и меняй контент -->
+            <a class="game-card" href="catalog.html">
+              <img
+                class="game-card__img"
+                src="assets/img/games/game2.jpg"
+                alt="Iron Kingdom"
+              />
+              <div class="game-card__body">
+                <h3 class="game-card__title">Iron Kingdom</h3>
+                <p class="game-card__meta">Жанр: Strategy</p>
+                <p class="game-card__meta">Разработчик: Forge Team</p>
+                <div class="game-card__row">
+                  <div class="rating" aria-label="Рейтинг 5 из 5">
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                  </div>
+                  <span class="game-card__price">2 499 ₽</span>
+                </div>
+                <span class="btn btn--secondary game-card__btn">В каталог</span>
+              </div>
+            </a>
+
+            <a class="game-card" href="catalog.html">
+              <img
+                class="game-card__img"
+                src="assets/img/games/game3.jpg"
+                alt="Shadow City"
+              />
+              <div class="game-card__body">
+                <h3 class="game-card__title">Shadow City</h3>
+                <p class="game-card__meta">Жанр: Horror</p>
+                <p class="game-card__meta">Разработчик: Night Lab</p>
+                <div class="game-card__row">
+                  <div class="rating" aria-label="Рейтинг 3 из 5">
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star">★</span>
+                    <span class="rating__star">★</span>
+                  </div>
+                  <span class="game-card__price">1 299 ₽</span>
+                </div>
+                <span class="btn btn--secondary game-card__btn">В каталог</span>
+              </div>
+            </a>
+
+            <a class="game-card" href="catalog.html">
+              <img
+                class="game-card__img"
+                src="assets/img/games/game4.jpg"
+                alt="Sky Legends"
+              />
+              <div class="game-card__body">
+                <h3 class="game-card__title">Sky Legends</h3>
+                <p class="game-card__meta">Жанр: RPG</p>
+                <p class="game-card__meta">Разработчик: Blue Peak</p>
+                <div class="game-card__row">
+                  <div class="rating" aria-label="Рейтинг 4 из 5">
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star">★</span>
+                  </div>
+                  <span class="game-card__price">1 799 ₽</span>
+                </div>
+                <span class="btn btn--secondary game-card__btn">В каталог</span>
+              </div>
+            </a>
+
+            <a class="game-card" href="catalog.html">
+              <img
+                class="game-card__img"
+                src="assets/img/games/game5.jpg"
+                alt="Arena Clash"
+              />
+              <div class="game-card__body">
+                <h3 class="game-card__title">Arena Clash</h3>
+                <p class="game-card__meta">Жанр: Shooter</p>
+                <p class="game-card__meta">Разработчик: Red Dot</p>
+                <div class="game-card__row">
+                  <div class="rating" aria-label="Рейтинг 5 из 5">
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                    <span class="rating__star rating__star--on">★</span>
+                  </div>
+                  <span class="game-card__price">2 099 ₽</span>
+                </div>
+                <span class="btn btn--secondary game-card__btn">В каталог</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Partners ===== -->
+      <section class="partners" aria-label="Наши партнеры">
+        <div class="container">
+          <h2 class="section-title">Наши партнеры</h2>
+
+          <div class="partners__grid">
+            <img
+              class="partners__logo"
+              src="assets/img/partners/partner1.svg"
+              alt="Partner 1"
+            />
+            <img
+              class="partners__logo"
+              src="assets/img/partners/partner2.svg"
+              alt="Partner 2"
+            />
+            <img
+              class="partners__logo"
+              src="assets/img/partners/partner3.svg"
+              alt="Partner 3"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__col">
+          <a class="footer__brand" href="index.html">BestGames</a>
+          <p class="footer__text">
+            Тел:
+            <a class="footer__link" href="tel:88009995599">8-800-999-55-99</a
+            ><br />
+            E-mail:
+            <a class="footer__link" href="mailto:best@games.ru"
+              >best@games.ru</a
+            >
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Разделы</h3>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#">Клиентам</a></li>
+            <li><a class="footer__link" href="#">Партнерам</a></li>
+            <li><a class="footer__link" href="#">О нас</a></li>
+            <li><a class="footer__link" href="#">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h3 class="footer__title">Навигация</h3>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="index.html">Главная</a></li>
+            <li>
+              <a class="footer__link" href="register.html">Регистрация</a>
+            </li>
+            <li><a class="footer__link" href="login.html">Авторизация</a></li>
+            <li>
+              <a class="footer__link" href="profile.html">Личный кабинет</a>
+            </li>
+            <li><a class="footer__link" href="index.html#search">Поиск</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/burger.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/theme.js"></script>
+  </body>
+</html>
